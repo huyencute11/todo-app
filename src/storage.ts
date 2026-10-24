@@ -13,15 +13,15 @@ function isTodo(value: unknown): value is Todo {
   )
 }
 
-/** Reads saved todos. Missing, unparsable or malformed data yields an empty list. */
+/** Reads saved todos. Missing, unreadable, unparsable or malformed data yields an empty list. */
 export function loadTodos(): Todo[] {
-  const raw = localStorage.getItem(STORAGE_KEY)
-  if (raw === null) return []
   try {
+    const raw = localStorage.getItem(STORAGE_KEY)
+    if (raw === null) return []
     const parsed: unknown = JSON.parse(raw)
     return Array.isArray(parsed) && parsed.every(isTodo) ? parsed : []
   } catch {
-    // Corrupt data must not crash the app (AC-6); start with an empty list.
+    // Corrupt data or blocked storage must not crash the app (AC-6); start with an empty list.
     return []
   }
 }

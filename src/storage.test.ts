@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { loadTodos, saveTodos, STORAGE_KEY } from './storage'
 import type { Todo } from './todos'
 
@@ -9,6 +9,7 @@ const sample: Todo[] = [
 
 describe('storage', () => {
   beforeEach(() => localStorage.clear())
+  afterEach(() => vi.restoreAllMocks())
 
   it('returns an empty list when nothing is stored', () => {
     expect(loadTodos()).toEqual([])
@@ -25,6 +26,13 @@ describe('storage', () => {
     ['malformed items', '[{"id":1,"title":null}]'],
   ])('AC-6: falls back to an empty list on %s', (_label, raw) => {
     localStorage.setItem(STORAGE_KEY, raw)
+    expect(loadTodos()).toEqual([])
+  })
+
+  it('AC-6: falls back to an empty list when reading storage throws', () => {
+    vi.spyOn(Storage.prototype, 'getItem').mockImplementation(() => {
+      throw new DOMException('The operation is insecure.', 'SecurityError')
+    })
     expect(loadTodos()).toEqual([])
   })
 })
