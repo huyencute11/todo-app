@@ -1,0 +1,17 @@
+# Progress: todo-app (lite mode)
+
+Started: 2026-10-24 10:41
+Repo: /Volumes/DATA/interview/todo-app (new, `git init` on `main`)
+
+| # | Phase | Status | Time | Notes |
+|---|-------|--------|------|-------|
+| 0 | Setup | pending | | Runs after the stack is approved (no project yet) |
+| 1+2 | Analyze + design (merged) | done | 3 min | `01-analysis.md`; defaults accepted, ACs approved |
+| 3 | Implement | pending | | |
+| 4 | Review | pending | | |
+| 5 | Verify | pending | | |
+| 6 | Ship | pending | | `gh` CLI is not installed |
+
+## Key decisions
+- 10:41: Build in a new folder `/Volumes/DATA/interview/todo-app`, not inside devflow-tools (user choice).
+- 10:46: Persist in localStorage, frontend only, Vite+React+TS, ship = local branch + PR text.
