@@ -7,6 +7,8 @@ export default defineConfig({
   plugins: [react()],
   test: {
     environment: 'jsdom',
+    // Node 25's built-in localStorage shadows jsdom's and lacks its methods.
+    execArgv: ['--no-webstorage'],
     setupFiles: ['./src/test-setup.ts'],
     include: ['src/**/*.test.{ts,tsx}'],
   },
