@@ -13,30 +13,28 @@ survive a reload, and corrupt or blocked storage falls back to an empty list ins
 ## Acceptance criteria
 | AC | Criterion | Test | Result | Evidence |
 |----|-----------|------|--------|----------|
-| AC-1 | Adding "Buy milk" shows it unchecked and clears the input | `AC-1: adds a todo` (e2e) + unit + component | ✅ | [screenshot](docs/devflow/todo-app/evidence/AC-1-todo-added.png) |
-| AC-2 | Blank or whitespace-only input adds nothing | `AC-2: rejects blank title`, `AC-2: does not add a todo for blank input` | ✅ | [test output](docs/devflow/todo-app/evidence/test-results.txt) |
-| AC-3 | Tick → completed; untick → active again | `AC-3: toggles completion` (e2e) + unit | ✅ | [completed](docs/devflow/todo-app/evidence/AC-3-completed.png) · [active again](docs/devflow/todo-app/evidence/AC-3-active-again.png) |
-| AC-4 | Deleting "A" from "A, B" leaves only "B" | `AC-4: deletes a todo` (e2e) + unit | ✅ | [screenshot](docs/devflow/todo-app/evidence/AC-4-deleted.png) |
-| AC-5 | Todos and their completed state survive a reload | `AC-5: persists across reload` (e2e) + unit | ✅ | [after reload](docs/devflow/todo-app/evidence/AC-5-after-reload.png) |
-| AC-6 | Invalid or unreadable saved data → empty state, no crash | `AC-6: falls back…` ×4, `AC-6: shows the empty state…` | ✅ | [test output](docs/devflow/todo-app/evidence/test-results.txt) |
+| AC-1 | Adding "Buy milk" shows it unchecked and clears the input | `AC-1: adds a todo` (e2e) + unit + component | ✅ | [screenshot](https://github.com/huyencute11/todo-app/blob/f87cd28f150ba4bb9e64d57ed12bdd9d05ea8db0/docs/devflow/todo-app/evidence/AC-1-todo-added.png?raw=true) |
+| AC-2 | Blank or whitespace-only input adds nothing | `AC-2: rejects blank title`, `AC-2: does not add a todo for blank input` | ✅ | [test output](https://github.com/huyencute11/todo-app/blob/f87cd28f150ba4bb9e64d57ed12bdd9d05ea8db0/docs/devflow/todo-app/evidence/test-results.txt) |
+| AC-3 | Tick → completed; untick → active again | `AC-3: toggles completion` (e2e) + unit | ✅ | [completed](https://github.com/huyencute11/todo-app/blob/f87cd28f150ba4bb9e64d57ed12bdd9d05ea8db0/docs/devflow/todo-app/evidence/AC-3-completed.png?raw=true) · [active again](https://github.com/huyencute11/todo-app/blob/f87cd28f150ba4bb9e64d57ed12bdd9d05ea8db0/docs/devflow/todo-app/evidence/AC-3-active-again.png?raw=true) |
+| AC-4 | Deleting "A" from "A, B" leaves only "B" | `AC-4: deletes a todo` (e2e) + unit | ✅ | [screenshot](https://github.com/huyencute11/todo-app/blob/f87cd28f150ba4bb9e64d57ed12bdd9d05ea8db0/docs/devflow/todo-app/evidence/AC-4-deleted.png?raw=true) |
+| AC-5 | Todos and their completed state survive a reload | `AC-5: persists across reload` (e2e) + unit | ✅ | [after reload](https://github.com/huyencute11/todo-app/blob/f87cd28f150ba4bb9e64d57ed12bdd9d05ea8db0/docs/devflow/todo-app/evidence/AC-5-after-reload.png?raw=true) |
+| AC-6 | Invalid or unreadable saved data → empty state, no crash | `AC-6: falls back…` ×4, `AC-6: shows the empty state…` | ✅ | [test output](https://github.com/huyencute11/todo-app/blob/f87cd28f150ba4bb9e64d57ed12bdd9d05ea8db0/docs/devflow/todo-app/evidence/test-results.txt) |
 
 16/16 unit/component and 4/4 e2e tests pass (Chromium). Lint and typecheck are clean.
 An independent acceptance audit found all 6 ACs proven.
 
 ## Screenshots
-<!-- No remote yet: these paths are relative. After pushing, replace them with
-     https://github.com/<owner>/<repo>/blob/<sha>/docs/devflow/todo-app/evidence/<file>.png?raw=true -->
 **AC-1 — todo added, input cleared**
-![AC-1](docs/devflow/todo-app/evidence/AC-1-todo-added.png)
+![AC-1](https://github.com/huyencute11/todo-app/blob/f87cd28f150ba4bb9e64d57ed12bdd9d05ea8db0/docs/devflow/todo-app/evidence/AC-1-todo-added.png?raw=true)
 
 **AC-3 — completed (struck through)**
-![AC-3](docs/devflow/todo-app/evidence/AC-3-completed.png)
+![AC-3](https://github.com/huyencute11/todo-app/blob/f87cd28f150ba4bb9e64d57ed12bdd9d05ea8db0/docs/devflow/todo-app/evidence/AC-3-completed.png?raw=true)
 
 **AC-4 — "A" deleted, "B" remains**
-![AC-4](docs/devflow/todo-app/evidence/AC-4-deleted.png)
+![AC-4](https://github.com/huyencute11/todo-app/blob/f87cd28f150ba4bb9e64d57ed12bdd9d05ea8db0/docs/devflow/todo-app/evidence/AC-4-deleted.png?raw=true)
 
 **AC-5 — state kept after reload**
-![AC-5](docs/devflow/todo-app/evidence/AC-5-after-reload.png)
+![AC-5](https://github.com/huyencute11/todo-app/blob/f87cd28f150ba4bb9e64d57ed12bdd9d05ea8db0/docs/devflow/todo-app/evidence/AC-5-after-reload.png?raw=true)
 
 ## How to test locally
 ```bash
