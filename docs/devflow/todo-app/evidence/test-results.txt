@@ -1,0 +1,29 @@
+# npm test (Vitest) — 2026-10-24 11:03, node v25.2.1
+ ✓ src/storage.test.ts > storage > returns an empty list when nothing is stored 1ms
+ ✓ src/storage.test.ts > storage > AC-5: round-trips todos including completed state 0ms
+ ✓ src/storage.test.ts > storage > AC-6: falls back to an empty list on invalid JSON 0ms
+ ✓ src/storage.test.ts > storage > AC-6: falls back to an empty list on a non-array value 0ms
+ ✓ src/storage.test.ts > storage > AC-6: falls back to an empty list on malformed items 0ms
+ ✓ src/storage.test.ts > storage > AC-6: falls back to an empty list when reading storage throws 1ms
+ ✓ src/todos.test.ts > addTodo > AC-1: appends a trimmed, active todo with a unique id 2ms
+ ✓ src/todos.test.ts > addTodo > AC-2: rejects blank title "" 0ms
+ ✓ src/todos.test.ts > addTodo > AC-2: rejects blank title "   " 0ms
+ ✓ src/todos.test.ts > addTodo > AC-2: rejects blank title "\t\n" 0ms
+ ✓ src/todos.test.ts > addTodo > does not mutate the input list 0ms
+ ✓ src/todos.test.ts > toggleTodo > AC-3: completes the target only, and toggling again makes it active 0ms
+ ✓ src/todos.test.ts > deleteTodo > AC-4: removes only the target todo 0ms
+ ✓ src/App.test.tsx > App > AC-1: adds a todo and clears the input 90ms
+ ✓ src/App.test.tsx > App > AC-2: does not add a todo for blank input 24ms
+ ✓ src/App.test.tsx > App > AC-6: shows the empty state when stored data is invalid 1ms
+ Test Files  3 passed (3)
+      Tests  16 passed (16)
+
+# npm run test:e2e (Playwright, chromium)
+  ✓  1 [chromium] › e2e/todos.spec.ts:13:1 › AC-1: adds a todo (512ms)
+  ✓  2 [chromium] › e2e/todos.spec.ts:24:1 › AC-3: toggles completion (385ms)
+  ✓  3 [chromium] › e2e/todos.spec.ts:40:1 › AC-4: deletes a todo (348ms)
+  ✓  4 [chromium] › e2e/todos.spec.ts:53:1 › AC-5: persists across reload (442ms)
+  4 passed (2.6s)
+
+# npm run lint — exit 0
+# npm run typecheck — exit 0

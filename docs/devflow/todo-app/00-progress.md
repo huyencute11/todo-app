@@ -9,7 +9,7 @@ Repo: /Volumes/DATA/interview/todo-app (new, `git init` on `main`)
 | 1+2 | Analyze + design (merged) | done | 3 min | `01-analysis.md`; defaults accepted, ACs approved |
 | 3 | Implement | done | 3 min | 15 unit + 4 e2e green; awaiting go-ahead for review |
 | 4 | Review | done | ~6 min | 2 Major fixed (R1, R2); 9 follow-ups |
-| 5 | Verify | pending | | |
+| 5 | Verify | done | ~4 min | 6/6 ACs pass; audit: all proven; 3 follow-ups |
 | 6 | Ship | pending | | `gh` CLI is not installed |
 
 ## Key decisions
