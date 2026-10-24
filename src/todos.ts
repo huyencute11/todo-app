@@ -5,14 +5,20 @@ export type Todo = {
   createdAt: number
 }
 
-export function addTodo(list: Todo[], _title: string): Todo[] {
-  return list
+/** Appends a new active todo. Returns the same list if the title is blank. */
+export function addTodo(list: Todo[], title: string): Todo[] {
+  const trimmed = title.trim()
+  if (!trimmed) return list
+  return [
+    ...list,
+    { id: crypto.randomUUID(), title: trimmed, completed: false, createdAt: Date.now() },
+  ]
 }
 
-export function toggleTodo(list: Todo[], _id: string): Todo[] {
-  return list
+export function toggleTodo(list: Todo[], id: string): Todo[] {
+  return list.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo))
 }
 
-export function deleteTodo(list: Todo[], _id: string): Todo[] {
-  return list
+export function deleteTodo(list: Todo[], id: string): Todo[] {
+  return list.filter((todo) => todo.id !== id)
 }
